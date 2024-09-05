@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Inicio de Sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding login-content">
+  <h2 class="welcome-title">Bienvenido</h2>
+  <p class="instruction-text">Por favor, ingresa tu nombre:</p>
+  
+  <ion-item class="name-input">
+    <ion-label position="floating">Nombre</ion-label>
+    <ion-input [(ngModel)]="userName" type="text"></ion-input>
+  </ion-item>
+
+  <ion-button expand="full" class="login-button" (click)="login()">Iniciar Sesión</ion-button>
+</ion-content>

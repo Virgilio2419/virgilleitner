@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <img src="assets/icon/logo virgil.png" alt="Logo" class="question-image" /> <!-- Imagen agregada -->
+      Pregunta {{ currentQuestionIndex + 1 }} de {{ questions.length }}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h2>{{ questions[currentQuestionIndex]?.question }}</h2>
+  <ion-list>
+    <ion-radio-group [(ngModel)]="selectedAnswer">
+      <ion-item *ngFor="let option of questions[currentQuestionIndex]?.options; let i = index">
+        <ion-label>{{ option }}</ion-label>
+        <ion-radio slot="start" [value]="i" (click)="selectAnswer(i)"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
+  
+  <ion-button *ngIf="isAnswered" (click)="nextQuestion()">Siguiente</ion-button>
+  
+  <div *ngIf="isAnswered" class="result-message">
+    <p *ngIf="isCorrect === false" class="incorrect">Respuesta incorrecta {{ userName }}. La respuesta correcta es: {{ questions[currentQuestionIndex]?.options[questions[currentQuestionIndex].correctAnswer] }}</p>
+    <p *ngIf="isCorrect === true" class="correct">Respuesta correcta! Muy bien {{ userName }}, sigue asi </p>
+  </div>
+
+  <div *ngIf="isAnswered">
+    <p>Respuestas correctas: {{ getCorrectPercentage() }}%</p>
+    <p>Respuestas incorrectas: {{ getIncorrectPercentage() }}%</p>
+  </div>  
+  <!-- Botón para volver al home -->
+  <ion-button color="secondary" routerLink="/home">
+    Volver al Home
+  </ion-button>
+</ion-content>

@@ -1,20 +1,28 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title>Inicio</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-content-centered">
+  <div class="ion-text-center ion-margin-bottom">
+    <img src="assets/icon/logo virgil.png" alt="Logo" class="logo-image" /> <!-- Imagen agregada -->
+    <h2>Bienvenido, {{ userName }}!</h2>
+    <h2>Resumen del Cuestionario</h2>
+    <p>Total de preguntas: {{ getSummary() }}</p>
+  </div>
+  
+  <div class="ion-text-center ion-margin-bottom">
+    <h3>Preguntas por Nivel:</h3>
+    <ul class="ion-padding-start">
+      <li>Nivel 1: {{ questionsCount?.level1 }}</li>
+      <li>Nivel 2: {{ questionsCount?.level2 }}</li>
+      <li>Nivel 3: {{ questionsCount?.level3 }}</li>
+    </ul>
+  </div>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div class="ion-text-center">
+    <ion-button routerLink="/question1">Comenzar Cuestionario</ion-button>
+    <ion-button (click)="startQuiz()" routerLink="/home">Reiniciar Cuestionario</ion-button>
   </div>
 </ion-content>
