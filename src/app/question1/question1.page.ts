@@ -6,7 +6,7 @@ import { HomePage } from '../home/home.page';
 @Component({
   selector: 'app-question1',
   templateUrl: './question1.page.html',
-  styleUrls: ['./question1.page.scss'],
+  //styleUrls: ['./question1.page.scss'],
 })
 
 export class Question1Page implements OnInit {

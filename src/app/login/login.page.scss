@@ -1,109 +1,131 @@
-/* Estilos para la página de inicio de sesión */
-.login-content {
+/* Estilos para el ion-header */
+ion-header {
+    ion-toolbar {
+      --background: #007bff; /* Color de fondo del encabezado */
+      --color: #fff; /* Color del texto en el encabezado */
+      display: flex; /* Usar flexbox para centrar */
+      justify-content: center; /* Centrar horizontalmente */
+      align-items: center; /* Centrar verticalmente */
+      padding: 10px 0; /* Espacio interno en la barra de herramientas */
+    }
+  }
+  
+  /* Estilos para el ion-content */
+  ion-content {
+    --background: #f5f5f5; /* Color de fondo del contenido */
+    padding: 20px; /* Espaciado interno */
+    overflow: auto; /* Permite el desplazamiento dentro del contenido */
+  
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
+    flex: 1; /* Asegura que el contenido ocupe el espacio disponible */
+  
+    .login-content {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+  
+    .logo-container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px; /* Espacio debajo del contenedor del logo */
+    }
+  
+    .logo-image {
+      width: 150px; /* Ajusta el tamaño de la imagen */
+      height: auto; /* Mantiene la relación de aspecto */
+      border-radius: 10px; /* Bordes redondeados opcionales */
+    }
+  
+    .welcome-container {
+      flex: 1; /* Asegura que el contenedor ocupe el espacio disponible */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .welcome-title {
+      font-size: 24px; /* Tamaño de fuente para el título de bienvenida */
+      font-weight: bold; /* Negrita */
+      margin-bottom: 10px; /* Espacio debajo del título */
+      color: #333; /* Color del texto del título */
+    }
+  
+    .instruction-text {
+      font-size: 18px; /* Tamaño de fuente para la instrucción */
+      margin-bottom: 25px; /* Espacio debajo del párrafo */
+      color: #666; /* Color del texto de la instrucción */
+    }
+  
+/* Asegúrate de ajustar el padding y el margen para el ion-label */
+.name-input {
+    --padding-start: 0; /* Elimina padding a la izquierda */
+    --padding-end: 0; /* Elimina padding a la derecha */
+    --inner-padding-top: 0; /* Elimina padding superior interno del input */
+  
+    ion-label {
+      margin-bottom: 10px; /* Ajusta el espacio debajo del label */
+      --padding-top: 10px; /* Ajusta el padding superior del label para mayor separación */
+      --font-size: 16px; /* Tamaño de fuente opcional para el label */
+    }
+  
+    ion-input {
+      --padding-top: 12px; /* Ajusta el padding superior del input para alinearlo con el label */
+      --padding-bottom: 12px; /* Ajusta el padding inferior del input si es necesario */
+    }
   }
   
-  .logo-container {
+    ion-item {
+      --padding-start: 0;
+      --inner-padding-end: 0;
+    }
+  
+    .login-button {
+      margin-top: 10px; /* Espacio encima del botón */
+      --background: #007bff; /* Color de fondo del botón */
+      --color: #fff; /* Color del texto del botón */
+      --border-radius: 20px; /* Bordes redondeados */
+      font-size: 16px; /* Tamaño de fuente del botón */
+      --padding-top: 12px;
+      --padding-bottom: 12px;
+    }
+  
+    .app-info {
+      margin-top: 20px; /* Espacio encima de la información adicional */
+      text-align: center;
+    }
+  
+    .app-description {
+      font-size: 14px; /* Tamaño de fuente para la descripción */
+      color: #333; /* Color del texto */
+    }
+  }
+  
+  /* Estilos para el footer */
+  footer.footer {
+    background-color: #ffffff; /* Color de fondo del footer */
     text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .logo-image {
-    width: 150px; /* Ajusta el tamaño según sea necesario */
-    height: auto;
-  }
-  
-  .welcome-title {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
-  .instruction-text {
-    font-size: 16px;
-    margin-bottom: 20px;
-  }
-  
-  .name-input {
+    padding: 15px; /* Aumenta el padding para un mejor diseño */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    position: relative;
     width: 100%;
-  }
-  
-  .login-button {
-    margin-top: 20px;
-  }
-  
-  .footer {
-    position: absolute;
     bottom: 0;
-    width: 100%;
-    background-color: #f8f9fa;
-    text-align: center;
-    padding: 10px;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: auto; /* Asegura que el footer esté al final */
   }
   
-  .footer-content {
-    font-size: 14px;
-    color: #333;
+  .footer-content p {
+    margin: 5px 0; /* Espacio alrededor de los párrafos */
+    color: #333; /* Color del texto */
   }
   
   .footer-content a {
-    color: #007bff;
-    text-decoration: none;
+    color: #007bff; /* Color de los enlaces */
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
   }
   
   .footer-content a:hover {
-    text-decoration: underline;
-  }
-  /* Estilos para el contenedor de bienvenida */
-.welcome-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-    text-align: center;
-  }
-  
-  .welcome-title {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-  }
-  
-  .instruction-text {
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
-  }
-  
-  .name-input {
-    margin-bottom: 1.5rem;
-    width: 100%;
-  }
-  
-  .login-button {
-    margin-top: 1rem;
-  }
-  
-  .app-info {
-    margin-top: 2rem;
-    padding: 1rem;
-    background-color: #f8f9fa;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .app-description {
-    font-size: 1rem;
-    color: #333;
-    
-  }
-  
-  .app-description strong {
-    font-weight: bold;
-    color: #007bff;
+    text-decoration: underline; /* Subrayado en hover para mejorar la visibilidad */
   }
   

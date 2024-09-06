@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      <img src="assets/icon/logo virgil.png" alt="Logo" class="question-image" /> <!-- Imagen agregada -->
+      <img src="assets/icon/logo virgil.png" alt="Logo" class="question-image" />
       Pregunta {{ currentQuestionIndex + 1 }} de {{ questions.length }}
     </ion-title>
   </ion-toolbar>
@@ -18,11 +18,11 @@
     </ion-radio-group>
   </ion-list>
   
-  <ion-button *ngIf="isAnswered"  (click)="nextQuestion()">Siguiente</ion-button>
+  <ion-button *ngIf="isAnswered" (click)="nextQuestion()">Siguiente</ion-button>
   
   <div *ngIf="isAnswered" class="result-message">
     <p *ngIf="isCorrect === false" class="incorrect">Respuesta incorrecta {{ userName }}. La respuesta correcta es: {{ questions[currentQuestionIndex]?.options[questions[currentQuestionIndex].correctAnswer] }}</p>
-    <p *ngIf="isCorrect === true" class="correct">Respuesta correcta! Muy bien {{ userName }}, sigue asi </p>
+    <p *ngIf="isCorrect === true" class="correct">Respuesta correcta! Muy bien {{ userName }}, sigue así</p>
   </div>
   
   <div *ngIf="isAnswered" class="score-summary">
@@ -30,19 +30,20 @@
     <p>Respuestas incorrectas: {{ getIncorrectPercentage() }}%</p>
   </div>
 
-  <ion-button color="secondary" routerLink="/question3">
-    Ir a página 3
-  </ion-button>
+  
 
-  <ion-button color="secondary" routerLink="/home">
-    Volver al Home
-  </ion-button>
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="footer-content">
-        <p>Síguenos en <a href="https://www.instagram.com/V1rgili0" target="_blank">Instagram</a></p>
-        <p>Envíanos un correo a <a href="mailto:arkit3kto&#64;gmail.com">arkit3kto&#64;gmail.com</a></p>
-        <p>Contáctanos: +569 85827304</p>
-      </div>
-    </footer>
+  <!-- Contenedor para los botones de navegación -->
+  <div class="button-container">
+    
+    <ion-button color="secondary" routerLink="/home">Volver al Home</ion-button>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>Síguenos en <a href="https://www.instagram.com/V1rgili0" target="_blank">Instagram</a></p>
+      <p>Envíanos un correo a <a href="mailto:arkit3kto&#64;gmail.com">arkit3kto&#64;gmail.com</a></p>
+      <p>Contáctanos: +569 85827304</p>
+    </div>
+  </footer>
 </ion-content>

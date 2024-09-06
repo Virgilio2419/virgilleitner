@@ -4,35 +4,34 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding login-content">
+<ion-content class="login-content">
   <!-- Contenedor del logo -->
   <div class="logo-container">
     <img src="assets/icon/logo virgil.png" alt="Logo" class="logo-image" />
   </div>
 
-<!-- Contenedor de bienvenida y formulario -->
-<div class="welcome-container">
-  <h2 class="welcome-title">¡Bienvenido!</h2>
-  <p class="instruction-text">Por favor, ingresa tu nombre para comenzar:</p>
-  
-  <!-- Formulario para ingresar el nombre -->
-  <ion-item class="name-input">
-    <ion-label position="floating">Nombre</ion-label>
-    <ion-input [(ngModel)]="userName" type="text"></ion-input>
-  </ion-item>
+  <!-- Contenedor de bienvenida y formulario -->
+  <div class="welcome-container">
+    <h2 class="welcome-title">¡Bienvenido!</h2>
+    <p class="instruction-text">Por favor, ingresa tu nombre para comenzar:</p>
+    
+<!-- Formulario para ingresar el nombre -->
+<ion-item class="name-input">
+  <ion-label position="floating">Nombre</ion-label>
+  <ion-input [(ngModel)]="userName" type="text"></ion-input>
+</ion-item>
 
-  <ion-button expand="full" class="login-button" (click)="login()">Iniciar Sesión</ion-button>
+    <ion-button expand="full" class="login-button" (click)="login()">Iniciar Sesión</ion-button>
 
-  <!-- Información adicional sobre la aplicación -->
-  <div class="app-info">
-    <p class="app-description">
-      Esta aplicación ha sido creada por <strong>Julio Soto</strong> para ayudarte a estudiar utilizando el método Leitner. 
-      El método Leitner es una técnica de repetición espaciada que optimiza el aprendizaje al enfocarse en las áreas donde más necesitas mejorar.
-    </p>
+    <!-- Información adicional sobre la aplicación -->
+    <div class="app-info">
+      <p class="app-description">
+        Esta aplicación ha sido creada por <strong>Julio Soto</strong> para ayudarte a estudiar utilizando el método Leitner. 
+        El método Leitner es una técnica de repetición espaciada que optimiza el aprendizaje al enfocarse en las áreas donde más necesitas mejorar.
+      </p>
+    </div>
   </div>
-</div>
 
-  
   <!-- Footer -->
   <footer class="footer">
     <div class="footer-content">

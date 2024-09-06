@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-question2',
   templateUrl: './question2.page.html',
-  styleUrls: ['./question2.page.scss'],
+  //styleUrls: ['./question2.page.scss'],
 })
 export class Question2Page implements OnInit {
   userName: string = '';
