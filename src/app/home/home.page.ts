@@ -30,4 +30,21 @@ export class HomePage implements OnInit {
     this.quizService.resetQuestionsLevel(); // Reinicia los niveles de las preguntas
     this.updateQuestionsCount(); // Actualiza el conteo después de reiniciar
   }
+  ionViewWillEnter() {
+    this.updateQuestionsCount();
+  }
+  getLastAccessDate(page: string): string {
+    return this.quizService.getLastAccessDate(page);
+  }
+
+  isStudyReminderRequired(level: string, daysThreshold: number): boolean {
+    const lastAccessDate = localStorage.getItem(`lastAccess_${level}`);
+    if (lastAccessDate) {
+      const lastDate = new Date(lastAccessDate);
+      const now = new Date();
+      const differenceInDays = Math.floor((now.getTime() - lastDate.getTime()) / (1000 * 3600 * 24));
+      return differenceInDays > daysThreshold;
+    }
+    return false;
+  }
 }

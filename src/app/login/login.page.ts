@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,10 +6,18 @@ import { Router } from '@angular/router';
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
-export class LoginPage {
+export class LoginPage implements OnInit {
   userName: string = '';
+  showLogo: boolean = true;
 
   constructor(private router: Router) {}
+
+  ngOnInit() {
+    // Ocultar el logo y mostrar el formulario después de 1 segundo (1000 ms)
+    setTimeout(() => {
+      this.showLogo = false;
+    }, 1000); // Tiempo suficiente para la animación
+  }
 
   login() {
     if (this.userName) {

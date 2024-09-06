@@ -59,6 +59,12 @@ export class QuizService {
     },
   ];
 
+  private lastAccessDates: { [key: string]: string } = {
+    'question1': '',
+    'question2': '',
+    'question3': ''
+  };
+
   getQuestions(level: number) {
     return this.questions.filter(q => q.level === level);
   }
@@ -84,4 +90,13 @@ export class QuizService {
       question.level = 1; // Restablece el nivel a 1
     });
   }
+
+  setLastAccessDate(page: string) {
+    this.lastAccessDates[page] = new Date().toLocaleString();
+  }
+
+  getLastAccessDate(page: string): string {
+    return this.lastAccessDates[page] || 'Nunca';
+  }
+
 }

@@ -1,10 +1,11 @@
 <ion-header>
   <ion-toolbar>
+    <ion-menu-button slot="start"></ion-menu-button>
     <ion-title>Inicio</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-content-centered">
+<ion-content id="main-content" class="ion-content-centered">
   <div class="ion-text-center ion-margin-bottom">
     <img src="assets/icon/logo virgil.png" alt="Logo" class="logo-image" /> <!-- Imagen agregada -->
     <h2>Bienvenido, {{ userName }}!</h2>
@@ -14,10 +15,27 @@
   
   <div class="ion-text-center ion-margin-bottom">
     <h3>Preguntas por Nivel:</h3>
+  </div>
+  <div class="ion-text-left ion-margin-bottom">
     <ul class="ion-padding-start">
-      <li>Nivel 1: {{ questionsCount?.level1 }}</li>
-      <li>Nivel 2: {{ questionsCount?.level2 }}</li>
-      <li>Nivel 3: {{ questionsCount?.level3 }}</li>
+      <li>
+        Nivel 1: {{ questionsCount?.level1 }} -- Último Acceso: {{ getLastAccessDate('question1') }}
+        <p *ngIf="isStudyReminderRequired('question1', 1)">
+          ⚠️ Debes estudiar este nivel. Último acceso hace más de un día.
+        </p>
+      </li>
+      <li>
+        Nivel 2: {{ questionsCount?.level2 }} -- Último Acceso: {{ getLastAccessDate('question2') }}
+        <p *ngIf="isStudyReminderRequired('question2', 3)">
+          ⚠️ Debes estudiar este nivel. Último acceso hace más de tres días.
+        </p>
+      </li>
+      <li>
+        Nivel 3: {{ questionsCount?.level3 }} -- Último Acceso: {{ getLastAccessDate('question3') }}
+        <p *ngIf="isStudyReminderRequired('question3', 7)">
+          ⚠️ Debes estudiar este nivel. Último acceso hace más de siete días.
+        </p>
+      </li>
     </ul>
   </div>
 
@@ -25,4 +43,13 @@
     <ion-button routerLink="/question1">Comenzar Cuestionario</ion-button>
     <ion-button (click)="startQuiz()" routerLink="/home">Reiniciar Cuestionario</ion-button>
   </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>Síguenos en <a href="https://www.instagram.com/V1rgili0" target="_blank">Instagram</a></p>
+      <p>Envíanos un correo a <a href="mailto:arkit3kto&#64;gmail.com">arkit3kto&#64;gmail.com</a></p>
+      <p>Contáctanos: +569 85827304</p>
+    </div>
+  </footer>
 </ion-content>

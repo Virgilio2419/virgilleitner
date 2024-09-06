@@ -22,6 +22,7 @@ export class Question3Page implements OnInit {
   
   ngOnInit() {
     this.userName = localStorage.getItem('userName') || 'Usuario'; // 
+    this.quizService.setLastAccessDate('question3'); // Registrar fecha de acceso
   }
 
   loadQuestions() {
