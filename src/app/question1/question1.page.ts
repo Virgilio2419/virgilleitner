@@ -40,6 +40,8 @@ export class Question1Page implements OnInit {
       this.quizService.moveQuestionToNextLevel(this.questions[this.currentQuestionIndex]);
     }else{
       this.incorrectAnswers++;
+      this.quizService.moveQuestionToPreviousLevel(this.questions[this.currentQuestionIndex]);
+
     }
   }
 
@@ -47,6 +49,7 @@ export class Question1Page implements OnInit {
     this.userName = localStorage.getItem('userName') || 'Usuario'; // 
     this.quizService.setLastAccessDate('question1'); // Registrar fecha de acceso
   }
+
   nextQuestion() {
     if (this.currentQuestionIndex < this.questions.length - 1) {
       this.currentQuestionIndex++;

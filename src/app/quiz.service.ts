@@ -85,6 +85,14 @@ export class QuizService {
       this.questions[index].level++;
     }
   }
+
+  moveQuestionToPreviousLevel(question: Question) {
+    const index = this.questions.findIndex(q => q.question === question.question && q.level === question.level);
+    if (index !== -1 && this.questions[index].level > 1) { // Asegúrate de que no baje del nivel 1
+      this.questions[index].level--;
+    }
+  }
+
   resetQuestionsLevel() {
     this.questions.forEach(question => {
       question.level = 1; // Restablece el nivel a 1

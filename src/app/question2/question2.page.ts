@@ -43,7 +43,8 @@ export class Question2Page implements OnInit {
       this.quizService.moveQuestionToNextLevel(this.questions[this.currentQuestionIndex]);
     }else {
       this.incorrectAnswers++;
-      
+      this.quizService.moveQuestionToPreviousLevel(this.questions[this.currentQuestionIndex]);
+
      }
   }
 
